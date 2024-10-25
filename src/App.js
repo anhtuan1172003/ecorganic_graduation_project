@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Blog from "./components/Blog";
 import MainContent from "./components/MainContent";
 import './style/App.css';
+import Product from "./components/Product";
 
 const banners = [
   { imageSrc: 'banner/banner1.jpeg' },
@@ -18,7 +19,7 @@ function Home() {
     <div>
       <Row>
         <Col>
-          <Carousel style={{ height: '500px', overflow: 'hidden' }}>
+          <Carousel controls={false} indicators={true} style={{ height: '500px', overflow: 'hidden' }} >
             {banners.map((banner, index) => (
               <Carousel.Item key={index}>
                 <Image src={banner.imageSrc} style={{ width: '100%', height: '500px' }} />
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/blog" element={<Blog/>} />
+        <Route path="/products" element={<Product/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
