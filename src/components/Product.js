@@ -14,7 +14,7 @@ export default function Product({ product }) {
     })
     return (
         <Container>
-            <Row>
+            {/* <Row>
                 {products.map((p) => (
                     <Col key={p.id} xs={12} md={3}>
                         <Card className="h-100">
@@ -26,7 +26,7 @@ export default function Product({ product }) {
                         </Card>
                     </Col>
                 ))}
-            </Row>
+            </Row> */}
         </Container>
     );
 }
