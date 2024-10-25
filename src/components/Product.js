@@ -14,7 +14,7 @@ export default function Product({ product }) {
     })
     return (
         <Container>
-            <Row>
+            <Row id="products">
                 {products.map((p) => (
                     <Col key={p.id} xs={12} md={3}>
                         <Card className="h-100">
