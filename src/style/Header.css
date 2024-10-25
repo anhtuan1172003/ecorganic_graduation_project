@@ -1,0 +1,40 @@
+.header-tab{
+    align-items: right;
+    text-align: right;
+  }
+.header-brand{
+    display: flex;
+}
+/* Ví dụ CSS cho file Header.css */
+.header-tab .dropdown-item {
+  color: #000;  /* Màu chữ mặc định */
+}
+
+.header-tab .dropdown-item:hover {
+  background-color: #007bff;  /* Màu nền khi hover */
+  color: #fff;  /* Màu chữ khi hover */
+}
+
+.header-tab .dropdown-divider {
+  border-color: #ccc;  /* Màu của đường kẻ ngăn cách */
+}
+
+/* Style for the dropdown title */
+.dropdown-toggle {
+  color: #333; /* Text color */
+  background-color: #f8f9fa; /* Background color */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the dropdown title */
+.dropdown-toggle:focus {
+  background-color: gray;
+  color: white;
+  border-radius: 20px;
+}
+
+.header-tab{
+  text-align: right;
+}
