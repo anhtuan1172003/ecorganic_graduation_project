@@ -9,7 +9,7 @@ export default function Header() {
       <Container>
         <Col className="header-brand col-md-4">
           <Navbar.Brand as={Link} to="/">
-            <Image src="brand.png" style={{ maxWidth: '100px' }} />
+            <Image src="brand.png" style={{ maxWidth: '30%' }} />
           </Navbar.Brand>
         </Col>
         <Col className="header-tab">

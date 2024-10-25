@@ -6,7 +6,7 @@ export default function Footer() {
     <Row className="footer-container">
       <Row className="footer-left">
         <Col style={{ textAlign: "left", paddingLeft: "5%" }}>
-          <h2><img src='brand.png' style={{ maxWidth: '100px' }}></img></h2>
+          <h2><img src='brand.png' style={{ maxWidth: '30%' }}></img></h2>
           <p>
             <a>Công Ty...</a><br />
             <a><i class="bi bi-telephone"></i>0396835513</a><br />
