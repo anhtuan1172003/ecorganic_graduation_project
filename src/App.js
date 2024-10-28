@@ -11,10 +11,9 @@ import AboutUS from "./components/AboutUs";
 import './style/App.css';
 
 const banners = [
-  { imageSrc: 'banner/banner1.jpeg' },
-  { imageSrc: 'banner/banner2.jpeg' },
-  { imageSrc: 'banner/banner3.jpeg' },
-  { imageSrc: 'banner/banner4.jpeg' },
+  { imageSrc: 'banner/banner1.png' },
+  { imageSrc: 'banner/banner2.png' },
+  { imageSrc: 'banner/banner3.png' },
 ];
 
 function Home() {
@@ -22,10 +21,10 @@ function Home() {
     <div>
       <Row>
         <Col>
-          <Carousel controls={false} indicators={true} style={{ height: '500px', overflow: 'hidden' }} >
+          <Carousel controls={true} indicators={true} style={{ height: '100%', overflow: 'hidden' }} >
             {banners.map((banner, index) => (
               <Carousel.Item key={index}>
-                <Image src={banner.imageSrc} style={{ width: '100%', height: '500px' }} />
+                <Image src={banner.imageSrc} style={{ width: '100%', height: '100%' }} />
               </Carousel.Item>
             ))}
           </Carousel>
@@ -45,6 +44,7 @@ function AppContent() {
 
   return (
     <>
+    
       {/* Hiển thị Header và Footer nếu không phải trang /admin */}
       {!hideHeaderFooter && <Header />}
 
@@ -66,6 +66,19 @@ function AppContent() {
 export default function App() {
   return (
     <BrowserRouter>
+    <div className="rightbar">
+      {/* Các thành phần khác trong RightBar */}
+
+      {/* Messenger Icon */}
+      <a 
+        href="https://www.facebook.com/messages/t/445935431934766/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="messenger-icon-link"
+      >
+        <i class="bi bi-messenger"></i>
+      </a>
+    </div>
       <AppContent />
     </BrowserRouter>
   );

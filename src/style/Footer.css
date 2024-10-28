@@ -12,3 +12,12 @@
   .footer-right{
     padding-top: 5%;
   }
+
+  .footer-link {
+    color: inherit;  /* Kế thừa màu từ phần tử cha */
+    text-decoration: none; /* Bỏ gạch chân */
+  }
+  
+  .footer-link:hover {
+    color: rgb(56, 56, 247);
+  }
