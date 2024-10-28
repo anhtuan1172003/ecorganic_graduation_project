@@ -48,5 +48,19 @@
             "price": 800,
             "image": "https://www.jaybranding.com/wp-content/uploads/2023/04/Narguerite-10419-1.webp"
         }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "username": "Admin",
+            "password": "admin",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "username": "User",
+            "password": "user",
+            "role": "user"
+        }
     ]
 }

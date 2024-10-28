@@ -1,11 +1,14 @@
 import { Row, Col, Image, Carousel } from "react-bootstrap";
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Blog from "./components/Blog";
 import MainContent from "./components/MainContent";
-import './style/App.css';
 import Product from "./components/Product";
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./components/AdminDashboard";
+import AboutUS from "./components/AboutUs"; 
+import './style/App.css';
 
 const banners = [
   { imageSrc: 'banner/banner1.jpeg' },
@@ -35,17 +38,35 @@ function Home() {
   );
 }
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+    // Kiểm tra nếu không phải trang /admin hoặc /admin/dashboard
+    const hideHeaderFooter = location.pathname.startsWith('/admin');
+
   return (
-    <BrowserRouter>
-    <Header/>
+    <>
+      {/* Hiển thị Header và Footer nếu không phải trang /admin */}
+      {!hideHeaderFooter && <Header />}
+
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/blog" element={<Blog/>} />
         <Route path="/products" element={<Product/>} />
+        <Route path="/admin" element={<AdminLogin/>} />
+        <Route path="/admin/dashboard" element={<AdminDashboard/>} />
+        <Route path="/about-us" element={<AboutUS/>} />
       </Routes>
-      <Footer/>
+
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
