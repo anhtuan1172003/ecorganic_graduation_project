@@ -27,13 +27,18 @@
 
 .quick-start img {
   max-width: 90%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .quick-start{
   text-align: center;
   margin: 0 7%;
   font-size: 2rem;
-  font-style: bold;
+
+}
+
+.quick-start img:hover {
+  transform: scale(1.1); /* Phóng to hình ảnh lên 5% */
 }
 
 .carousel-control-next, .carousel-control-prev {

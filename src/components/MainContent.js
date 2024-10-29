@@ -1,5 +1,6 @@
 import { Row, Col, Container, Card, Carousel } from "react-bootstrap";
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "../style/MainContent.css";
 
 export default function MainContent() {
@@ -27,20 +28,28 @@ export default function MainContent() {
         <Container>
             <Row className="quick-start" sm={2} xs={1} md={4}>
                 <Col className="guide">
-                    <img src="./image/guide.jpg"></img>
-                    <p>Hướng Dẫn</p>
+                    <Link to="/guide"  style={{ textDecoration: 'none', color: 'black'}}>
+                        <img src="./image/guide.png" alt="Hướng Dẫn" />
+                        <p>Hướng Dẫn</p>
+                    </Link>
                 </Col>
                 <Col className="pay">
-                    <img src="./image/pay.jpg"></img>
-                    <p>Thanh Toán</p>
+                    <Link to="/pay"  style={{ textDecoration: 'none', color: 'black'}}>
+                        <img src="./image/pay.png" alt="Thanh Toán" />
+                        <p>Thanh Toán</p>
+                    </Link>
                 </Col>
                 <Col className="ship">
-                    <img src="./image/ship.jpg"></img>
-                    <p>Vận Chuyển</p>
+                    <Link to="/ship"  style={{ textDecoration: 'none', color: 'black'}}>
+                        <img src="./image/ship.png" alt="Vận Chuyển" />
+                        <p>Vận Chuyển</p>
+                    </Link>
                 </Col>
                 <Col className="warranty">
-                    <img src="./image/warranty.jpg"></img>
-                    <p>Bảo Hành</p>
+                    <Link to="/warranty"  style={{ textDecoration: 'none', color: 'black'}}>
+                        <img src="./image/warranty.png" alt="Bảo Hành" />
+                        <p>Bảo Hành</p>
+                    </Link>
                 </Col>
             </Row>
 
@@ -53,10 +62,9 @@ export default function MainContent() {
                                     {chunk.map((card) => (
                                         <Col key={card.id} xs={12} md={3}>
                                             <Card className="h-100">
-                                                <Card.Img variant="top" src={card.image}/>
+                                                <Card.Img variant="top" src={card.image} />
                                                 <Card.Body>
                                                     <Card.Title>{card.title}</Card.Title>
-                                                    <Card.Text>{card.price}</Card.Text>
                                                 </Card.Body>
                                             </Card>
                                         </Col>

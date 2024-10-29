@@ -21,7 +21,6 @@ export default function Product({ product }) {
                             <Card.Img variant="top" src={p.image} />
                             <Card.Body>
                                 <Card.Title>{p.title}</Card.Title>
-                                <Card.Text>{p.price}</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>

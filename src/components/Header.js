@@ -15,14 +15,11 @@ export default function Header() {
         <Col className="header-tab">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/about-us">VỀ CHÚNG TÔI</Nav.Link>
-              <Nav.Link as={Link} to="/products">SẢN PHẨM</Nav.Link>
-              <Nav.Link as={Link} to="/authentication">DỊCH VỤ</Nav.Link>
-              <Nav.Link as={Link} to="/blog">BLOG</Nav.Link>
-              <Nav.Link as={Link} to="/userprofile">BÁN SỈ</Nav.Link>
-              <Nav.Link as={Link} to="/userprofile">LIÊN HỆ</Nav.Link>
-              <Nav.Link as={Link} to="/cart"><i class="bi bi-cart-fill" style={{ fontSize: '18px' }}></i></Nav.Link>
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/about-us" className='mx-5'>VỀ CHÚNG TÔI</Nav.Link>
+              <Nav.Link as={Link} to="/products" className='mx-5'>SẢN PHẨM</Nav.Link>
+              <Nav.Link as={Link} to="/authentication" className='mx-5'>DỊCH VỤ</Nav.Link>
+              <Nav.Link as={Link} to="/blog" className='mx-5'>BLOG</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Col>
