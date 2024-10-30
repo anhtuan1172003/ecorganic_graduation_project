@@ -6,7 +6,7 @@ export default function Ship() {
     return (
         <div>
             <Container>
-                <h2 className='p-5'>Chính Sách Vận Chuyển</h2>
+                <h2 style={{textAlign: 'center', padding: '3rem'}}>Chính Sách Vận Chuyển</h2>
                 <h4>1. Phí vận chuyển...</h4>
                 <p style={{textIndent: '20px'}}>Đối với đơn hàng có tổng giá trị trên 300.000 VNĐ, ECORGANIC sẽ miễn phí vận chuyển toàn quốc.</p>
                 <p></p>

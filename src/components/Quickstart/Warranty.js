@@ -5,7 +5,7 @@ export default function Warranty() {
     return (
         <div>
             <Container>
-            <h2 className='p-5'>Chế Độ Bảo Hành</h2>
+            <h2 style={{textAlign: 'center', padding: '3rem'}}>Chế Độ Bảo Hành</h2>
             <h4>1. CAM KẾT CHẤT LƯỢNG</h4>
             <ul>
                 <li>Giao hàng đúng và đủ số lượng đã đặt.</li>

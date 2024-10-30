@@ -7,7 +7,7 @@ export default function Pay() {
             <Container>
                 <Row md={2} sm={1} xs={1}>
                     <Col md={8}>
-                        <h2 className='p-5'>Hướng Dẫn Thanh Toán</h2>
+                        <h2 style={{textAlign: 'center', padding: '3rem'}}>Hướng Dẫn Thanh Toán</h2>
                         <p>Nhằm mang lại trải nghiệm hài lòng và sự an tâm cho Quý khách, Xanh xin gửi tới quý khách quy định mua hàng như sau:</p>
                         <ul>
                             <li>Quý khách vui lòng chuyển khoản 100% giá trị đơn hàng hoặc cọc trước 50.000 VNĐ để ECORGANIC ship COD. </li>
