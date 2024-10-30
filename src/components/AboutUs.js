@@ -56,8 +56,8 @@ export default function About() {
                 <Row className="mb-5">
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
-                            <Card.Body>
-                                <Card.Title>Chất Lượng Vượt Trội</Card.Title>
+                            <Card.Body >
+                                <Card.Title><Image src='badge.png'  className="title-icon" />Chất Lượng Vượt Trội</Card.Title>
                                 <Card.Text>
                                     Sản phẩm của chúng tôi không chỉ là sự lựa chọn an toàn mà còn được sản xuất theo tiêu chuẩn nghiêm ngặt, đảm bảo nguyên liệu từ thiên nhiên không chứa hóa chất độc hại.
                                 </Card.Text>
@@ -67,7 +67,7 @@ export default function About() {
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
                             <Card.Body>
-                                <Card.Title>Bảo Vệ Hành Tinh Xanh</Card.Title>
+                                <Card.Title><Image src='planet-earth.png'  className="title-icon" />Bảo Vệ Hành Tinh Xanh</Card.Title>
                                 <Card.Text>
                                     Mỗi sản phẩm bạn chọn từ Ecorganic giúp giảm thiểu rác thải nhựa và bảo vệ môi trường cho thế hệ sau. Chúng tôi tin rằng hành động nhỏ có thể tạo sự thay đổi lớn.
                                 </Card.Text>
@@ -77,7 +77,7 @@ export default function About() {
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
                             <Card.Body>
-                                <Card.Title>Sản Phẩm Hữu Cơ Sáng Tạo</Card.Title>
+                                <Card.Title><Image src='creative.png'  className="title-icon" />Sản Phẩm Hữu Cơ Sáng Tạo</Card.Title>
                                 <Card.Text>
                                     Bên cạnh màng bọc thực phẩm, chúng tôi còn phát triển túi vải và nhiều sản phẩm hữu cơ khác để đa dạng hóa sự lựa chọn bền vững của người tiêu dùng.
                                 </Card.Text>
