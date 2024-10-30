@@ -8,7 +8,7 @@ export default function Ship() {
             <Container>
                 <h2 className='p-5'>Chính Sách Vận Chuyển</h2>
                 <h4>1. Phí vận chuyển...</h4>
-                <p style={{textIndent: '20px'}}>Đối với đơn hàng có tổng giá trị trên 300.000 VNĐ, Xanh Xanh sẽ miễn phí vận chuyển toàn quốc.</p>
+                <p style={{textIndent: '20px'}}>Đối với đơn hàng có tổng giá trị trên 300.000 VNĐ, ECORGANIC sẽ miễn phí vận chuyển toàn quốc.</p>
                 <p></p>
                 <p style={{textIndent: '20px'}}>Đối với đơn hàng có giá trị dưới 300.000 VNĐ, phí vận chuyển được tính theo cước vận chuyển của GiaoHangTietKiem</p>
                 <h4>2. Thời gian giao hàng...</h4>

@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Container, Form, Button, Card, Table, Modal } from "react-bootstrap";
+import { Row, Col, Container, Form, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { imgDB } from "./firebase/Config";
+import { v4 } from "uuid";
+
 
 export default function CRUDProduct() {
     const [pName, setPName] = useState("");
-    const [pImg, setPImg] = useState("");
+    const [pImgFile, setPImgFile] = useState(null);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -12,43 +16,51 @@ export default function CRUDProduct() {
             .then(res => res.json())
             .then(result => setProducts(result))
             .catch(error => console.log(error));
-    })
+    }, []);
 
-    function handleCreate(e) {
-        //ngan chan reload page khi click vao create
+    // Hàm xử lý tạo sản phẩm và tải ảnh lên Firebase
+    const handleCreate = async (e) => {
         e.preventDefault();
-        //check for input
+
         let message = "";
-        let status = true;
-        if (pName.length == 0) {
-            message += "Product name is required \n";
-            status = false;
-        }
-        if (status == false || message.length > 0)
+        if (pName.length === 0) message += "Product name is required \n";
+        if (!pImgFile) message += "Product image is required \n";
+
+        if (message) {
             alert(message);
-        else {
+            return;
+        }
+
+        // Tải ảnh lên Firebase và lấy URL
+        const imgRef = ref(imgDB, `images/${v4()}`);
+        try {
+            await uploadBytes(imgRef, pImgFile);
+            const imgUrl = await getDownloadURL(imgRef);
+
             const newProduct = {
                 title: pName,
-                image: pImg,
+                image: imgUrl,  // Dùng URL ảnh từ Firebase
             };
 
+            // Gửi yêu cầu tạo sản phẩm đến API
             fetch("https://h36drg-8080.csb.app/products", {
                 method: "POST",
                 body: JSON.stringify(newProduct),
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                }
+                headers: { 'Content-Type': 'application/json; charset=UTF-8' }
             })
                 .then(resp => resp.json())
                 .then(productCreated => {
-                    alert("Created successful! Id:" + productCreated.id);
-                    // Clear form fields
+                    alert("Created successfully! Id:" + productCreated.id);
+                    setProducts(prevProducts => [...prevProducts, productCreated]);
                     setPName("");
-                    setPImg("");
+                    setPImgFile(null);
                 })
                 .catch(err => console.log(err));
+
+        } catch (error) {
+            console.error("Error uploading image:", error);
         }
-    }
+    };
 
     function handleDelete(id) {
         if (window.confirm("Do you want to delete?")) {
@@ -65,50 +77,37 @@ export default function CRUDProduct() {
                     <Table hover bordered striped>
                         <thead>
                             <tr>
-                                <th>ID</th><th>Image</th><th>Name</th><th colspan="2">Functions</th>
+                                <th>ID</th><th>Image</th><th>Name</th><th>Functions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {
-                                products?.map(p => (
-                                    <tr key={p.id}>
-                                        <td>{p.id}</td>
-                                        <td>{p.image}</td>
-                                        <td>{p.title}</td>
-                                        <td>
-                                            <Link to={`edit/${p.id}`}>Edit</Link>
-                                        </td>
-                                        <td>
-                                            <Link to='#' onClick={() => handleDelete(p.id)}>Delete</Link>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
+                            {products.map(p => (
+                                <tr key={p.id}>
+                                    <td>{p.id}</td>
+                                    <td><img src={p.image} alt={p.title} width="50" /></td>
+                                    <td>{p.title}</td>
+                                    <td>
+                                        <Link to={`edit/${p.id}`}>Edit</Link> | 
+                                        <Link to="#" onClick={() => handleDelete(p.id)}>Delete</Link>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </Table>
                 </Col>
             </Row>
             <Row>
-                <Col><h3 style={{ textAlign: "center" }}>Create new Product</h3></Col>
-            </Row>
-            <hr />
-            <Row>
                 <Col>
-                    <Form.Group className="mb-3">
-                        <Form.Label>Id</Form.Label>
-                        <Form.Control disabled />
-                    </Form.Group>
+                    <h3 style={{ textAlign: "center" }}>Create New Product</h3>
                     <Form.Group className="mb-3">
                         <Form.Label>Name *</Form.Label>
                         <Form.Control value={pName} onChange={e => setPName(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3">
-                        <Form.Label>Image</Form.Label>
-                        <Form.Control value={pImg} as="textarea" rows={3} onChange={e => setPImg(e.target.value)} />
+                        <Form.Label>Image *</Form.Label>
+                        <Form.Control type="file" onChange={e => setPImgFile(e.target.files[0])} />
                     </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Button onClick={e => handleCreate(e)}>Create</Button>
-                    </Form.Group>
+                    <Button onClick={handleCreate}>Create</Button>
                 </Col>
             </Row>
         </Container>
