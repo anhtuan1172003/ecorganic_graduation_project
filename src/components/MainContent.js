@@ -53,7 +53,7 @@ export default function MainContent() {
                 </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
                 <Container>
                     <Carousel autoPlay={true} interval={2000} controls={true} indicators={false} style={{ margin: '0 7% 0 7%' }} id="carousel">
                         {chunkedCards.map((chunk, index) => (
@@ -74,7 +74,7 @@ export default function MainContent() {
                         ))}
                     </Carousel>
                 </Container>
-            </Row>
+            </Row> */}
         </Container>
     )
 }

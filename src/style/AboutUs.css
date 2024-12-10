@@ -73,3 +73,13 @@
     margin-right: 8px; /* Thêm khoảng cách giữa ảnh và chữ */
     vertical-align: middle; /* Căn giữa ảnh với dòng chữ */
 }
+
+.team-card:hover {
+    transform: scale(1.5); /* Phóng to hình ảnh lên 5% */
+    z-index: 10;
+  }
+
+.team-card {
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}

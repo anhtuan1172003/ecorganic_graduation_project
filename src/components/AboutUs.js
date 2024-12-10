@@ -3,14 +3,38 @@ import { Container, Row, Col, Image, Card } from 'react-bootstrap';
 import '../style/AboutUs.css';
 
 export default function About() {
+
+    const teamMembers = [      
+        {
+            name: 'Đặng Văn Bảo Linh',
+            img: '../image/image3.png',
+        },
+        {
+            name: 'Phạm Thị Ly',
+            img: '../image/image8.png',
+        },
+        {
+            name: 'Nguyễn Hồng Thái',
+            img: '../image/image5.png',
+        },
+        {
+            name: 'Đặng Thị Thuỳ Trang',
+            img: '../image/image2.png',
+        },
+        {
+            name: 'Đoàn Thành Nam',
+            img: '../image/image4.png',
+        },
+    ];
+
     return (
         <div>
             <Container className="about-page">
 
                 <Row className="text-center mt-5 mb-3">
                     <Col>
-                        <h1 style={{fontSize: '60px'}}>Về Chúng Tôi</h1>
-                        <p className="lead" style={{fontSize: '25px', fontStyle: 'bold'}}>Khám phá sứ mệnh và giá trị cốt lõi của Ecorganic</p>
+                        <h1 style={{ fontSize: '60px' }}>Về Chúng Tôi</h1>
+                        <p className="lead" style={{ fontSize: '25px', fontStyle: 'bold' }}>Khám phá sứ mệnh và giá trị cốt lõi của Ecorganic</p>
                     </Col>
                 </Row>
 
@@ -57,7 +81,7 @@ export default function About() {
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
                             <Card.Body >
-                                <Card.Title><Image src='badge.png'  className="title-icon" />Chất Lượng Vượt Trội</Card.Title>
+                                <Card.Title><Image src='badge.png' className="title-icon" />Chất Lượng Vượt Trội</Card.Title>
                                 <Card.Text>
                                     Sản phẩm của chúng tôi không chỉ là sự lựa chọn an toàn mà còn được sản xuất theo tiêu chuẩn nghiêm ngặt, đảm bảo nguyên liệu từ thiên nhiên không chứa hóa chất độc hại.
                                 </Card.Text>
@@ -67,7 +91,7 @@ export default function About() {
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
                             <Card.Body>
-                                <Card.Title><Image src='planet-earth.png'  className="title-icon" />Bảo Vệ Hành Tinh Xanh</Card.Title>
+                                <Card.Title><Image src='planet-earth.png' className="title-icon" />Bảo Vệ Hành Tinh Xanh</Card.Title>
                                 <Card.Text>
                                     Mỗi sản phẩm bạn chọn từ Ecorganic giúp giảm thiểu rác thải nhựa và bảo vệ môi trường cho thế hệ sau. Chúng tôi tin rằng hành động nhỏ có thể tạo sự thay đổi lớn.
                                 </Card.Text>
@@ -77,7 +101,7 @@ export default function About() {
                     <Col md={4} className="d-flex align-items-stretch">
                         <Card className="commitment-card">
                             <Card.Body>
-                                <Card.Title><Image src='creative.png'  className="title-icon" />Sản Phẩm Hữu Cơ Sáng Tạo</Card.Title>
+                                <Card.Title><Image src='creative.png' className="title-icon" />Sản Phẩm Hữu Cơ Sáng Tạo</Card.Title>
                                 <Card.Text>
                                     Bên cạnh màng bọc thực phẩm, chúng tôi còn phát triển túi vải và nhiều sản phẩm hữu cơ khác để đa dạng hóa sự lựa chọn bền vững của người tiêu dùng.
                                 </Card.Text>
@@ -90,10 +114,27 @@ export default function About() {
                 <Row className="community-section text-center mt-5 mb-5">
                     <Col>
                         <h2>Tham Gia Cộng Đồng Ecorganic</h2>
-                        <p style={{fontStyle: 'italic'}}>
+                        <p style={{ fontStyle: 'italic' }}>
                             Trở thành một phần của cộng đồng Ecorganic, nơi mỗi người tiêu dùng đều có thể tạo ra sự thay đổi tích cực. Hãy cùng chúng tôi xây dựng một hành tinh xanh, khỏe mạnh và bền vững hơn!
                         </p>
                     </Col>
+                </Row>
+            </Container>
+            <Container className="team-section text-center mt-5 mb-5">
+                <h2 className='mb-5'>Đội Ngũ Của Chúng Tôi</h2>
+                <Row>
+                    {teamMembers.map((member, index) => (
+                        <Col md={4} sm={6} xs={12} className="mb-4" key={index}>
+                            <Card className="team-card">
+                                <Card.Body>
+                                    <Image
+                                        src={member.img}
+                                        style={{ width: '100%', height: '100%' }}
+                                    />
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
             </Container>
         </div>
