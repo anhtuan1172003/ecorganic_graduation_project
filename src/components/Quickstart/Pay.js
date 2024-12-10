@@ -5,7 +5,6 @@ export default function Pay() {
     return (
         <div>
             <Container>
-                <Row md={2} sm={1} xs={1}>
                     <Col>
                         <h2 style={{textAlign: 'center', padding: '3rem'}}>Hướng Dẫn Thanh Toán</h2>
                         <p>Nhằm mang lại trải nghiệm hài lòng và sự an tâm cho Quý khách, Xanh xin gửi tới quý khách quy định mua hàng như sau:</p>
@@ -20,7 +19,6 @@ export default function Pay() {
                             </li>
                         </ul>
                     </Col>
-                </Row>
             </Container>
         </div>
     );
