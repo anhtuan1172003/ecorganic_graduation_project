@@ -18,7 +18,6 @@ import Warranty from "./components/Quickstart/Warranty";
 
 const banners = [
   { imageSrc: 'banner/banner1.png' },
-  { imageSrc: 'banner/banner2.png' },
   { imageSrc: 'banner/banner3.png' },
 ];
 

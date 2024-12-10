@@ -18,8 +18,6 @@ export default function Header() {
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/about-us" className='mx-5'>VỀ CHÚNG TÔI</Nav.Link>
               <Nav.Link as={Link} to="/products" className='mx-5'>SẢN PHẨM</Nav.Link>
-              <Nav.Link as={Link} to="/authentication" className='mx-5'>DỊCH VỤ</Nav.Link>
-              <Nav.Link as={Link} to="/blog" className='mx-5'>BLOG</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Col>
