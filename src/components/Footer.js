@@ -16,8 +16,8 @@ export default function Footer() {
         <Col className="footer-right" style={{alignContent: 'center'}}>
           <h2>
             <a href="https://www.facebook.com/ecorganic.vietnam" target="_blank" rel="noopener noreferrer" className='footer-link'><i class="bi bi-facebook">  </i></a>
-            <a href="https://www.facebook.com/ecorganic.vietnam" target="_blank" rel="noopener noreferrer" className='footer-link'><i class="bi bi-instagram">  </i></a>
-            <a href="https://www.facebook.com/ecorganic.vietnam" target="_blank" rel="noopener noreferrer" className='footer-link'><i class="bi bi-tiktok"> </i></a>
+            <a href="https://www.instagram.com/ecorganic.vietnam" target="_blank" rel="noopener noreferrer" className='footer-link'><i class="bi bi-instagram">  </i></a>
+            <a href="https://www.tiktok.com/@ecorganic.vietnam" target="_blank" rel="noopener noreferrer" className='footer-link'><i class="bi bi-tiktok"> </i></a>
           </h2>
         </Col>
       </Row>

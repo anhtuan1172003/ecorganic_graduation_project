@@ -6,7 +6,7 @@ export default function Pay() {
         <div>
             <Container>
                 <Row md={2} sm={1} xs={1}>
-                    <Col md={8}>
+                    <Col>
                         <h2 style={{textAlign: 'center', padding: '3rem'}}>Hướng Dẫn Thanh Toán</h2>
                         <p>Nhằm mang lại trải nghiệm hài lòng và sự an tâm cho Quý khách, Xanh xin gửi tới quý khách quy định mua hàng như sau:</p>
                         <ul>
@@ -19,10 +19,6 @@ export default function Pay() {
                                 <p>Nội dung chuyển khoản: Số điện thoại người nhận hàng</p>
                             </li>
                         </ul>
-                    </Col>
-                    <Col style={{ textAlign: 'center' }} md={4}>
-                        <h3 className='p-5'>Mã QR thanh toán</h3>
-                        <img src="QRPay.png" alt="QR" style={{ width: '70%' }}></img>
                     </Col>
                 </Row>
             </Container>
