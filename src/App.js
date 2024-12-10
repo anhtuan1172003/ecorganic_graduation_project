@@ -2,7 +2,6 @@ import { Row, Col, Image, Carousel } from "react-bootstrap";
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Blog from "./components/Blog";
 import MainContent from "./components/MainContent";
 import Product from "./components/Product";
 import AdminLogin from "./components/AdminLogin";
@@ -56,7 +55,6 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/products" element={<Product />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
